@@ -20,6 +20,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
+    <style>
+        h1{
+            color:red;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -29,8 +34,19 @@
         <h5>Description:</h5>
         <p>@Html.Raw(description)</p>
 
-        <h5>Artists:</h5>
-        <p>@artists</p>
-    </div>
+        @if (artists.Length > 0)
+        {
+            <h5>Artists:</h5>
+            <p>
+                <ul>
+                    @foreach (var artist in artists)
+                {
+                        <li>@artist</li>
+                    }
+                </ul>
+            </p>
+                }
+
+</div>
 </body>
 </html>
